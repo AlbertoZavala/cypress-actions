@@ -6,7 +6,7 @@
   "author": "Alberto Zavala <jose.alberto.zavala.flores@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "cy:open":"npx cypress open"
+    "build":"npx cypress open"
   },
   "devDependencies": {
     "cypress": "^10.4.0"
