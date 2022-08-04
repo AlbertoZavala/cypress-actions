@@ -6,7 +6,7 @@
   "author": "Alberto Zavala <jose.alberto.zavala.flores@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build":"npx cypress run --headless"
+    "build":"npx cypress run --headless --config-file=cypress.config.js"
   },
   "devDependencies": {
     "cypress": "^10.4.0"
