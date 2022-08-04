@@ -12,9 +12,9 @@ jobs:
     
     steps:      
       - name: Checkout
-        uses: actions/chekout@v2        
+        uses: actions/chekout@main        
       
       - name: Cypress run
-        uses: cypress-io/github-action@v4
+        uses: cypress-io/github-action@main
         with:
           start: npx cypress open 
