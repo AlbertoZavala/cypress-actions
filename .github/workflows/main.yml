@@ -7,14 +7,15 @@ on:
     branches: [ "main" ]
   
 jobs:
-  cypress-run:    
+  cypress-run:
     runs-on: ubuntu-latest
-    
-    steps:      
+    steps:
       - name: Checkout
-        uses: actions/chekout@v2        
+        uses: actions/checkout@v2      
       
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          start: npx cypress open 
+          build: npm run build
+          start: npm start
+          record: true        
