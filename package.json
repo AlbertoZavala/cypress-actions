@@ -1,0 +1,11 @@
+{
+  "name": "cypress-actions",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/AlbertoZavala/cypress-actions.git",
+  "author": "Alberto Zavala <jose.zavala@lcliquidezcorporativa.com.mx>",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^10.4.0"
+  }
+}
