@@ -19,4 +19,4 @@ jobs:
           working-directory: client
           build: npm run build
           start: npm start
-          record: true        
+          
