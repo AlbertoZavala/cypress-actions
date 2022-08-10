@@ -17,6 +17,7 @@ jobs:
         uses: cypress-io/github-action@v2
         with:          
           parallel: true
+          record: true
           config-file: cypress.config.js
           headless: true
           build: npm run build
@@ -25,6 +26,7 @@ jobs:
         uses: cypress-io/github-action@v2
         with:          
           parallel: true
+          record: true
           config-file: cypress.config.js
           headless: true
           build: npm run build
@@ -33,6 +35,7 @@ jobs:
         uses: cypress-io/github-action@v2
         with:          
           parallel: true
+          record: true
           config-file: cypress.config.js
           headless: true
           build: npm run build
