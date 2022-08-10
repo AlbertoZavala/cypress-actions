@@ -36,7 +36,7 @@ jobs:
           headless: true
           build: npm run build          
 
-cypress-run-three:
+  cypress-run-three:
     runs-on: ubuntu-18.04
     steps:
       - name: Checkout
