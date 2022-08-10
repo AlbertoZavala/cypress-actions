@@ -18,10 +18,7 @@ jobs:
         with:          
           config-file: cypress.config.js
           headless: true
-          build: npm run build   
-      - uses: actions/upload-artifact@v2
-        with:
-          name: 
+          build: npm run build
 
   cypress-run-two:
     runs-on: windows-latest
