@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
   
 jobs:
-  cypress-run:
+  cypress-run-one:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -18,10 +18,13 @@ jobs:
         with:          
           config-file: cypress.config.js
           headless: true
-          build: npm run build          
-          
-  cypress-run-run:
-    runs-on: ubuntu-latest
+          build: npm run build   
+      - uses: actions/upload-artifact@v2
+        with:
+          name: 
+
+  cypress-run-two:
+    runs-on: windows-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2      
@@ -32,4 +35,16 @@ jobs:
           config-file: cypress.config.js
           headless: true
           build: npm run build          
-          
+
+cypress-run-three:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2      
+      
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:          
+          config-file: cypress.config.js
+          headless: true
+          build: npm run build          
