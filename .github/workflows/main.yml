@@ -13,35 +13,28 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2      
       
-      - name: Cypress run
+      - name: Cypress run - step A
         uses: cypress-io/github-action@v2
         with:          
+          parallel: true
           config-file: cypress.config.js
           headless: true
           build: npm run build
 
-  cypress-run-two:
-    runs-on: windows-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2      
-      
-      - name: Cypress run
+      - name: Cypress run - step B
         uses: cypress-io/github-action@v2
         with:          
+          parallel: true
           config-file: cypress.config.js
           headless: true
-          build: npm run build          
+          build: npm run build
 
-  cypress-run-three:
-    runs-on: ubuntu-18.04
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2      
-      
-      - name: Cypress run
+      - name: Cypress run - step C
         uses: cypress-io/github-action@v2
         with:          
+          parallel: true
           config-file: cypress.config.js
           headless: true
-          build: npm run build          
+          build: npm run build
+
+  
