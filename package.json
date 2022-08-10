@@ -6,8 +6,8 @@
   "author": "Alberto Zavala <jose.alberto.zavala.flores@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "npx cypress run --spec \"cypress/e2e/firstTest.cy.js\" --headless --parallel --record --key=abc123",
-    "build:one": "npx cypress run --headless",
+    "build": "npx cypress run --headless",
+    "build:one": "npx cypress run --spec \"cypress/e2e/firstTest.cy.js\" --headless --parallel --record --key=abc123",
     "run:server": "json-server --watch cypress/db.json"
   },
   "devDependencies": {
