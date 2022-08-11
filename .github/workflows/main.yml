@@ -26,9 +26,9 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
+      max-parallel: 2
       matrix:
-        ci_index: [0, 1, 2, 3]
-        ci_total: [6]
+        ci_index: [2, 3, 4, 6]        
     steps:
       - run: echo "Testing 1"
       
