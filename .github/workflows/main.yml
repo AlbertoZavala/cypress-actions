@@ -30,7 +30,42 @@ jobs:
         ci_index: [0, 1, 2, 3]
         ci_total: [4]
     steps:
-      - run: echo "Testing..."
+      - run: echo "Testing 1"
+      - name: Checkout
+        uses: actions/checkout@v2      
+      
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:      
+          config-file: cypress.config.js
+          headless: true
+          build: npm run build
+    steps:
+      - run: echo "Testing 2"
+      - name: Checkout
+        uses: actions/checkout@v2      
+      
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:      
+          config-file: cypress.config.js
+          headless: true
+          build: npm run build
+
+    steps:
+      - run: echo "Testing 3"
+      - name: Checkout
+        uses: actions/checkout@v2      
+      
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:      
+          config-file: cypress.config.js
+          headless: true
+          build: npm run build
+
+    steps:
+      - run: echo "Testing 4"
       - name: Checkout
         uses: actions/checkout@v2      
       
