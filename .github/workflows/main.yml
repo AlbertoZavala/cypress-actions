@@ -28,14 +28,13 @@ jobs:
       fail-fast: false
       max-parallel: 2
       matrix:
-        ci_index: [2, 3, 4, 6]        
+        ci_index: [2, 3, 4, 6, 5, 3]        
     steps:
-      - run: echo "Testing 1"
+      - run: echo "Testing ${{matrix.ci_index}}"
       
       - name: Checkout
         uses: actions/checkout@v2            
 
-      - run: echo "Testing 1 finalizado"
       
       - name: Cypress run
         uses: cypress-io/github-action@v2
@@ -43,6 +42,8 @@ jobs:
           config-file: cypress.config.js
           headless: true
           build: npm run build    
+
+      - run: echo "Testing ${{matrix.ci_index}}"
 
   deploy:
     needs: test
