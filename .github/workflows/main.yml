@@ -2,14 +2,15 @@ name: Cypress Test
 
 on:  
   push:
-    branches: [ "main" ]
+    branches: [ "testing-parallel-options" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "testing-parallel-options" ]
   
 jobs:
-  cypress-run-one:
+  build:
     runs-on: ubuntu-latest
     steps:
+      - run: echo "Building..."
       - name: Checkout
         uses: actions/checkout@v2      
       
@@ -20,9 +21,16 @@ jobs:
           headless: true
           build: npm run build
 
-  cypress-run-two:
+  test:
+    needs: build
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        ci_index: [0, 1, 2, 3]
+        ci_total: [4]
     steps:
+      - run: echo "Testing..."
       - name: Checkout
         uses: actions/checkout@v2      
       
@@ -33,9 +41,11 @@ jobs:
           headless: true
           build: npm run build
 
-  cypress-run-three:
+  deploy:
+    needs: test
     runs-on: ubuntu-latest
     steps:
+      - run: echo "Deploying..."
       - name: Checkout
         uses: actions/checkout@v2      
       
