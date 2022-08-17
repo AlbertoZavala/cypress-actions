@@ -2,14 +2,15 @@ name: Cypress Test
 
 on:  
   push:
-    branches: [ "main" ]
+    branches: [ "testing-parallel-options" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "testing-parallel-options" ]
   
 jobs:
-  cypress-run-one:
+  build:
     runs-on: ubuntu-latest
     steps:
+      - run: echo "Building..."
       - name: Checkout
         uses: actions/checkout@v2      
       
@@ -20,22 +21,35 @@ jobs:
           headless: true
           build: npm run build
 
-  cypress-run-two:
+  test:
+    needs: build
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        ci_index: [2, 3, 4, 6, 5, 3]        
     steps:
+      - run: echo "Testing ${{matrix.ci_index}}"
+      
       - name: Checkout
-        uses: actions/checkout@v2      
+        uses: actions/checkout@v2            
+
       
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:      
           config-file: cypress.config.js
           headless: true
-          build: npm run build
+          build: npm run build    
 
-  cypress-run-three:
+      - run: echo "Testing ${{matrix.ci_index}}"
+
+  deploy:
+    needs: test
     runs-on: ubuntu-latest
     steps:
+      - run: echo "Deploying..."
       - name: Checkout
         uses: actions/checkout@v2      
       
