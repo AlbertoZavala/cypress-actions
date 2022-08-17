@@ -1,10 +1,8 @@
 name: Cypress Test
 
 on:  
-  push:
-    branches: [ "testing-parallel-options" ]
   pull_request:
-    branches: [ "testing-parallel-options" ]
+    branches: [ "main" ]
   
 jobs:
   build:
