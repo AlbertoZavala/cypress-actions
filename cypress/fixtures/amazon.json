@@ -1,0 +1,8 @@
+{
+  "logoLocator": "#nav-logo-sprites",
+  "searchBox": "#twotabsearchtextbox",
+  "searchBoxButton":"#nav-search-submit-button",
+  "textResultHeader":"RESULTADOS",  
+  "selectedItem":"iPhone",
+  "addToCartButton": "#add-to-cart-button"
+}
