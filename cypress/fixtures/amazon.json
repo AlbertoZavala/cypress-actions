@@ -1,8 +1,9 @@
 {
   "logoLocator": "#nav-logo-sprites",
+  "searchedIteme": "iphone 11",
   "searchBox": "#twotabsearchtextbox",
   "searchBoxButton":"#nav-search-submit-button",
   "textResultHeader":"RESULTADOS",  
-  "selectedItem":"iPhone",
+  "selectedItem":"iPhone 11",
   "addToCartButton": "#add-to-cart-button"
 }
