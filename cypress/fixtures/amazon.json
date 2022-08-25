@@ -1,9 +1,14 @@
 {
+  "site":"https://www.amazon.com.mx",
   "logoLocator": "#nav-logo-sprites",
   "searchedIteme": "iphone 11",
   "searchBox": "#twotabsearchtextbox",
   "searchBoxButton":"#nav-search-submit-button",
   "textResultHeader":"RESULTADOS",  
   "selectedItem":"iPhone 11",
-  "addToCartButton": "#add-to-cart-button"
+  "addToCartButton": "#add-to-cart-button",
+  "resultList": "[data-component-type=\"s-search-results\"]",
+  "firstElementContainer": "[data-index=\"2\"]",
+  "firstElementImage": "[data-component-type=\"s-product-image\"]",
+  "wishListButton": "#wishListMainButton > .a-button-inner > .a-button-text"  
 }
