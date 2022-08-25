@@ -23,3 +23,38 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+
+Cypress.Commands.add('goToProduct', () => {
+  
+  cy.fixture('./../fixtures/amazon.json').then((locators) => {    
+    cy.visit(locators.site);    
+    cy.log(locators.logoLocator)    
+    cy.get(locators.logoLocator).should('be.visible');
+    cy.get(locators.searchBox).type(locators.searchedIteme);
+    cy.get(locators.searchBoxButton).click();    
+    cy.get('span').contains(locators.textResultHeader).should('be.visible');
+
+    cy.get(locators.resultList).should('be.visible')
+      .find(locators.firstElementContainer).should('be.visible')      
+      .find(locators.firstElementImage).should('be.visible')
+      .click()
+
+    // cy.get(locators.wishListButton).should('be.visible').click()
+  });
+})
+
+
+// Cypress.Commands.add('holi', () => {
+//   cy.log('holi método dentro');
+// })
+
+
+// Cypress.Commands.addAll({
+//   goToProduct() {
+//     cy.log('HOLONA')
+//   },
+//   holi(){
+//     return cy.log('HOLONA')
+//   },
+// })
